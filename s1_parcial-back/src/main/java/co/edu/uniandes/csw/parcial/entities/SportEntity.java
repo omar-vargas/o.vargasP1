@@ -5,7 +5,11 @@
  */
 package co.edu.uniandes.csw.parcial.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -15,6 +19,18 @@ import javax.persistence.Entity;
 public class SportEntity extends BaseEntity {
     
     private String name;
+    @PodamExclude
+    @OneToMany(mappedBy = "sport")
+    private List<ProductEntity> events= new ArrayList<ProductEntity >();
+
+    public List<ProductEntity> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<ProductEntity> events) {
+        this.events = events;
+    }
+    
     
     public SportEntity() {
     }
