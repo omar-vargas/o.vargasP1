@@ -16,9 +16,9 @@ Esta aplicación tiene como propósito gestionar la venta de artículos deportiv
 
 Para esto la aplicación ya cuenta con la entidad SportEntity y los métodos de persistencia y lógica necesarios para el examen. Favor revisar la carpeta de persistencia y lógica antes de empezar.
 
-## Punto 1 (25%). Persistencia
+## Punto 1 (20%). Persistencia
 
-(15%) Cree la entidad _ProductEntity_ en el paquete correspondiente. Un producto tiene un nombre, una descripción, un valor en pesos por unidad, una cantidad de unidades, si es un producto único o no, un deporte (La relación es uno a muchos, donde un deporte tiene muchos productos y un producto tiene un deporte) y un id de tipo _Long_ que representa su llave primaria.
+(10%) Cree la entidad _ProductEntity_ en el paquete correspondiente. Un producto tiene un nombre, una descripción, un valor en pesos por unidad, una cantidad de unidades, si es un producto único o no, un deporte (La relación es uno a muchos, donde un deporte tiene muchos productos y un producto tiene un deporte) y un id de tipo _Long_ que representa su llave primaria.
  
 (10%) Implemente la persistencia de la entidad (Solo el método de crear).
 
@@ -36,7 +36,7 @@ Usted debe crear la lógica de producto que cubra las siguientes reglas de negoc
 
 (25%) Crear al menos tres pruebas unitarias: una que valida el escenario ideal en que todas las reglas de negocio se aprueban, y otras dos en las que las reglas de negocio fallan (las dos que usted decida). Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción _BusinessLogicException_ con un mensaje donde se especifique el problema.
 
-## Punto 3 (25%). API
+## Punto 3 (30%). API
 
 (5%) Modifique la clase _ProductDTO_ y agregue los atributos correspondientes, los getters, los setters y un constructor vacío. En nuestra decisión de diseño el DTO contendrá la relación y no necesitamos una clase Detail, por lo que este DTO debe estar relacionado con la clase SportDTO.
  
@@ -48,7 +48,7 @@ Usted debe crear la lógica de producto que cubra las siguientes reglas de negoc
 1. Validar que el deporte existe y sino devolver una excepción _WebApplicationException_.
 2. Llamar al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado. 
 
-(Bono 5%) Haga las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
+(5%) Haga las pruebas de Postman para la creación de un nuevo recurso. En el proyecto cree una carpeta “images” y suba allí las imágenes de las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
 
 ### Prueba 1. Creación de un producto con un deporte no existente:
 
