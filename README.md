@@ -20,33 +20,35 @@ Para esto la aplicación ya cuenta con la entidad SportEntity y los métodos de 
 
 (15%) Cree la entidad _ProductEntity_ en el paquete correspondiente. Un producto tiene un nombre, una descripción, un valor en pesos por unidad, una cantidad de unidades, si es un producto único o no, un deporte (La relación es uno a muchos, donde un deporte tiene muchos productos y un producto tiene un deporte) y un id de tipo _Long_ que representa su llave primaria.
  
-(10%) Implemente la persistencia de la entidad.
+(10%) Implemente la persistencia de la entidad (Solo el método de crear).
 
-## Punto 2 (45%). Lógica
+## Punto 2 (50%). Lógica
 
 Usted debe crear la lógica de producto que cubra las siguientes reglas de negocio:
 
 * El nombre no puede ser vacío o nulo.
-* El valor del producto no puede ser cero si el producto tiene unidades. Además ni el valor y las unidades no pueden ser negativas.
+* El valor del producto no puede ser cero si el producto tiene unidades.
+* Ni el valor ni las unidades pueden ser negativas.
 * No se permiten productos únicos para el deporte 'Futbol'.
+* El deporte no puede ser nulo
 
-(20%) Crear el método en la capa de lógica que valide las reglas de negocio y solicita persistir en caso de que todas pasen (sólo para el método crear).
+(25%) Crear el método en la capa de lógica que valide las reglas de negocio y solicita persistir en caso de que todas pasen (sólo para el método crear).
 
-(25%) Crear al menos tres pruebas unitarias: una que valida el escenario ideal en que todas las reglas de negocio se aprueban, y otras dos en las que las reglas de negocio fallan. Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción _BusinessLogicException_ con un mensaje donde se especifique el problema.
+(25%) Crear al menos tres pruebas unitarias: una que valida el escenario ideal en que todas las reglas de negocio se aprueban, y otras dos en las que las reglas de negocio fallan (las dos que usted decida). Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción _BusinessLogicException_ con un mensaje donde se especifique el problema.
 
-## Punto 3 (30%). Pruebas de integración
+## Punto 3 (25%). API
 
-(5%) Modifique la clase _ProductDTO_ y agregue los atributos correspondientes, los getters, los setters y un constructor vacío. Como nuestra decisión de diseño, el DTO contendrá la relación y no necesitamos una clase Detail.
+(5%) Modifique la clase _ProductDTO_ y agregue los atributos correspondientes, los getters, los setters y un constructor vacío. En nuestra decisión de diseño el DTO contendrá la relación y no necesitamos una clase Detail, por lo que este DTO debe estar relacionado con la clase SportDTO.
  
-(5%) Cree el método toEntity que retorna un objeto _ProductEntity_ con los datos del objeto _ProductDTO_.
+(5%) Cree el método toEntity que retorna un objeto _ProductEntity_ con los datos del objeto _ProductDTO_. Tenga presente la asociación.
  
-(5%) Agregue el método constructor que recibe un _ProductEntity_ y haga el mapeo correspondiente entre ambas clases.
+(5%) Agregue el método constructor que recibe un _ProductEntity_ y haga el mapeo correspondiente entre ambas clases. Tenga presente la asociación.
  
-(5%) Cree la clase _ProductResource_ con el método createProduct. Tenga presente que para crear un producto se requiere el deporte, por lo que la ruta es de la forma /sports/:id/products. Usted debe:
+(10%) Cree la clase _ProductResource_ con el método createProduct. Tenga presente que para crear un producto se requiere el deporte, por lo que la ruta es de la forma /sports/:id/products. En este método usted debe:
 1. Validar que el deporte existe y sino devolver una excepción _WebApplicationException_.
 2. Llamar al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado. 
 
-(10%) Haga las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
+(Bono 5%) Haga las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
 
 ### Prueba 1. Creación de un producto con un deporte no existente:
 
