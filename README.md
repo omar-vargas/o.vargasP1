@@ -8,7 +8,8 @@
 3. Abra los proyectos en Netbeans
 4. En Netbeans vaya a _Services > Databases > JavaDB_ y cree una base de datos que se llame _parcial_ (los demás campos déjelos en blanco)
 5. Ejecute Clean & Build sobre el proyecto principal _s1_parcial_ y confirme que el resultado es exitoso.
-6. Ejecute el archivo sql que se encuentra en s1_parcial-api > sql > s1_parcial1.sql. Para verlo debe ver el proyecto usando la pestaña Files
+
+Recuerde, este es un examen individual, ante cualquier sospecha de fraude su nota será cero.
 
 ## Contexto
 
@@ -48,7 +49,9 @@ Usted debe crear la lógica de producto que cubra las siguientes reglas de negoc
 1. Validar que el deporte existe y sino devolver una excepción _WebApplicationException_.
 2. Llamar al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado. 
 
-(5%) Haga las pruebas de Postman para la creación de un nuevo recurso. En el proyecto cree una carpeta “images” y suba allí las imágenes de las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
+(5%) Haga las pruebas de Postman para la creación de un nuevo recurso. En el proyecto cree una carpeta “images” y suba allí las imágenes de las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio.
+
+Para esto, ejecute el archivo sql que se encuentra en s1_parcial-api > sql > s1_parcial1.sql. Para verlo debe ver el proyecto usando la pestaña Files.
 
 ### Prueba 1. Creación de un producto con un deporte no existente:
 
